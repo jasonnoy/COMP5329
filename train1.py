@@ -48,8 +48,8 @@ def main():
     print('done\n')
 
     # Data loading
-    train_dataset = ImageDataset(data_root_dir='/content/drive/MyDrive/Colab Notebooks/COMP5329S1A2Dataset', train=True, test=False)
-    val_dataset = ImageDataset(data_root_dir='/content/drive/MyDrive/Colab Notebooks/COMP5329S1A2Dataset', train=False, test=False)
+    train_dataset = ImageDataset(data_root_dir='/content/drive/MyDrive/Colab Notebooks/ASL-main/COMP5329S1A2Dataset', train=True)
+    val_dataset = ImageDataset(data_root_dir='/content/drive/MyDrive/Colab Notebooks/ASL-main/COMP5329S1A2Dataset', train=False)
 
     print("len(val_dataset)): ", len(val_dataset))
     print("len(train_dataset)): ", len(train_dataset))
