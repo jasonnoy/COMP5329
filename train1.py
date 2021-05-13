@@ -88,6 +88,8 @@ def train_multi_label(model, train_loader, val_loader, lr):
         if epoch > Stop_epoch:
             break
         for i, (inputData, target) in enumerate(train_loader):
+            print(inputData.shape)
+            print(target.shape)
             inputData = inputData.cuda()
             target = target.cuda()  # (batch,3,num_classes)
             target = target.max(dim=1)[0]

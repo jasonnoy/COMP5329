@@ -31,7 +31,7 @@ class ImageDataset(Dataset):
             for inner_it in train_csv_label[outter_it]:
                 np_train_csv_label[outter_it][int(inner_it)] = 1
 
-        self.train_csv_label = np_train_csv_label.tolist()
+        self.train_csv_label = np_train_csv_label
 
         #class_mask = self.train_csv_label.sum(axis=0)
         #print(class_mask)
@@ -82,7 +82,4 @@ class ImageDataset(Dataset):
         image = self.transform(image)
         targets = self.labels[index]
         
-        return {
-            'image': torch.tensor(image, dtype=torch.float32),
-            'label': torch.tensor(targets, dtype=torch.float32)
-        }
+        return  torch.tensor(image, dtype=torch.float32), torch.tensor(targets, dtype=torch.float32)
